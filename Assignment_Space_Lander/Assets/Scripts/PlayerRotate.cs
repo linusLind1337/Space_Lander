@@ -8,14 +8,18 @@ using Debug = UnityEngine.Debug;
 
 public class PlayerRotate : MonoBehaviour
 {
+    [Header("Boost Settings")]
     public float boostSpeed;
     public float counterXForce;
 
+    [Header("Ground check")]
     private bool isPlayerBoosting;
     public bool isGrounded;
 
+    [Header("GroundLayer")]
     public LayerMask GroundLayer;
 
+    [Header("References")]
     public Transform playerObj;
     private Camera mainCam;
     private Vector3 target;
