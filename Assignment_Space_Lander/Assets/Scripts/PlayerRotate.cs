@@ -17,7 +17,7 @@ public class PlayerRotate : MonoBehaviour
     public LayerMask GroundLayer;
 
     public Transform playerObj;
-    public Camera mainCam;
+    private Camera mainCam;
     private Vector3 target;
     private Vector2 distance;
     private Rigidbody2D rb2d;
