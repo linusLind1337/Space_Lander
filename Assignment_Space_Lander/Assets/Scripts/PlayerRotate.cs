@@ -13,19 +13,24 @@ public class PlayerRotate : MonoBehaviour
     public float counterXForce;
 
     [Header("Ground check")]
-    private bool isPlayerBoosting;
+    public bool isPlayerBoosting;
     public bool isGrounded;
+    private bool boostEnabled;
 
     [Header("GroundLayer")]
     public LayerMask GroundLayer;
 
     [Header("References")]
     public Transform playerObj;
+    public ParticleSystem ps;
     private Camera mainCam;
     private Vector3 target;
     private Vector2 distance;
     private Rigidbody2D rb2d;
     private Quaternion originalRot;
+
+    private PlayerBoost _Boost;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -34,6 +39,7 @@ public class PlayerRotate : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.gravityScale = 1f;
         originalRot = transform.rotation;
+        _Boost = GameObject.FindFirstObjectByType<PlayerBoost>();
     }
 
     // Update is called once per frame
@@ -41,13 +47,20 @@ public class PlayerRotate : MonoBehaviour
     {
         UpdatePos();
         Grounded();
-        if (Input.GetMouseButtonDown(0))
+        UserInput();
+    }
+
+    public void UserInput()
+    {
+        if (Input.GetMouseButtonDown(0) && !boostEnabled)
         {
             EnableBoost();
+            ps.Play();
         }
         if (Input.GetMouseButtonUp(0))
         {
             DisableBoost();
+            ps.Stop();
         }
 
         if (isPlayerBoosting)
@@ -80,22 +93,32 @@ public class PlayerRotate : MonoBehaviour
         isPlayerBoosting = true;
         rb2d.gravityScale = 0f;
         isGrounded = false;
+        boostEnabled = true;
+        _Boost.canPlayerBoost = true;
+
     }
     public void DisableBoost()
     {
         isPlayerBoosting = false;
+        boostEnabled = false;
+        _Boost.canPlayerBoost = false;
         rb2d.gravityScale = 1f;
 
         //Counter force on X axis to smooth it in;
         Vector2 slowForce = -rb2d.velocity * counterXForce;
         rb2d.AddForce(slowForce, ForceMode2D.Force);
 
+        
+
     }
 
     public void Boosting()
     {
+
         Vector3 Direction = (target - transform.position);
         rb2d.AddForce(Direction * boostSpeed);
+        _Boost.canPlayerBoost = false;
+
     }
 
     public void Grounded()
@@ -109,10 +132,9 @@ public class PlayerRotate : MonoBehaviour
                 rb2d.freezeRotation = true;
                 rb2d.gravityScale = 0f;
                 Debug.DrawRay(distance, Vector2.down, Color.green);
-                Debug.Log("Grounded");
+               Debug.Log("Grounded");
 
             }
-
         }
         else
         {
