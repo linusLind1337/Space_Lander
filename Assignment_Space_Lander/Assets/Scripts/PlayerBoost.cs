@@ -40,6 +40,7 @@ public class PlayerBoost : MonoBehaviour
         }
         else
         {
+            _player.ps.Stop();
             _player.isPlayerBoosting = false;
             _rigidbody.gravityScale = 1f;
         }
