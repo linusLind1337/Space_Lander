@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - SecondCam
+  - LandingPad
+  - Shield_Pickup
   layers:
   - Default
   - TransparentFX

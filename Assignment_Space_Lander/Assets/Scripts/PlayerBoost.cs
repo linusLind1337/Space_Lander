@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class PlayerBoost : MonoBehaviour
 {
+    [Header("Fuel settings")]
     public float currentBoostFuel;
     public float maxBoostFuel;
-
+    [SerializeField] private float usingFuelAmount;
+    [Space]
+    
+    [Header("Booleans")]
     public bool canPlayerBoost;
+    [Space]
 
+    //References
     private PlayerRotate _player;
     private Rigidbody2D _rigidbody;
 
@@ -28,6 +34,8 @@ public class PlayerBoost : MonoBehaviour
         Boosting();
     }
 
+    #region Tracking the fuel
+    
     public void Boosting()
     {
         if (currentBoostFuel > 0)
@@ -37,7 +45,7 @@ public class PlayerBoost : MonoBehaviour
             if (_player.isPlayerBoosting)
             {
                 _player.Boosting();
-                currentBoostFuel -= Time.deltaTime * 10;
+                currentBoostFuel -= Time.deltaTime * usingFuelAmount;
             }
         }
         else
@@ -53,9 +61,19 @@ public class PlayerBoost : MonoBehaviour
         }
         
     }
+    #endregion
+
+    #region Collision detect
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        currentBoostFuel += 10;
+        if (other.gameObject.CompareTag("LandingPad"))
+        {
+            currentBoostFuel  = maxBoostFuel;
+        }
+        
     }
+
+    #endregion
+    
 }
