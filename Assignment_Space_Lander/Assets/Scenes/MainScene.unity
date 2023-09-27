@@ -4934,7 +4934,7 @@ PrefabInstance:
       objectReference: {fileID: 750549937}
     - target: {fileID: 5360982673453740941, guid: b5cd75b550a66bc4a90c5aee401dfe54, type: 3}
       propertyPath: maxBoostFuel
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5360982673453740941, guid: b5cd75b550a66bc4a90c5aee401dfe54, type: 3}
       propertyPath: usingFuelAmount
