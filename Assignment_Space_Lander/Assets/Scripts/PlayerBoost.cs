@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class PlayerBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Change for later, dont want boosting in !!update!!
         Boosting();
     }
 
@@ -44,6 +46,16 @@ public class PlayerBoost : MonoBehaviour
             _player.isPlayerBoosting = false;
             _rigidbody.gravityScale = 1f;
         }
+
+        if (currentBoostFuel >= maxBoostFuel)
+        {
+            currentBoostFuel = maxBoostFuel;
+        }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        currentBoostFuel += 10;
     }
 }
