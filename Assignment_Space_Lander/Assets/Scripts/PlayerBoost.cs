@@ -23,8 +23,8 @@ public class PlayerBoost : MonoBehaviour
     void Awake()
     {
         currentBoostFuel = maxBoostFuel;
-        _player = GameObject.FindFirstObjectByType<PlayerRotate>();
-        _rigidbody = GameObject.FindFirstObjectByType<Rigidbody2D>();
+        _player = FindFirstObjectByType<PlayerRotate>();
+        _rigidbody = FindFirstObjectByType<Rigidbody2D>();
     }
 
     // Update is called once per frame

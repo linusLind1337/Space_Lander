@@ -40,7 +40,9 @@ public class PlayerRotate : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.gravityScale = 1f;
         originalRot = transform.rotation;
-        _Boost = GameObject.FindFirstObjectByType<PlayerBoost>();
+        _Boost = FindFirstObjectByType<PlayerBoost>();
+
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
