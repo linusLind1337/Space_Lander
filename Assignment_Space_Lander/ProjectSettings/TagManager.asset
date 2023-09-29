@@ -8,6 +8,7 @@ TagManager:
   - SecondCam
   - LandingPad
   - Shield_Pickup
+  - Bullet
   layers:
   - Default
   - TransparentFX

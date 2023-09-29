@@ -10,7 +10,7 @@ public class UI_Manager : MonoBehaviour
     PlayerDetecter _playerDetecter;
 
     public TMP_Text BoostText;
-    public TMP_Text DistanceText;
+    public TMP_Text TimerText;
     public GameObject gameOverObj;
     
 
@@ -24,6 +24,11 @@ public class UI_Manager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        TimerText.text = "Timer: " + Time.time.ToString();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +39,7 @@ public class UI_Manager : MonoBehaviour
     {
         if (BoostText != null)
         {
-            BoostText.text = "Boost: " + _playerBoost.currentBoostFuel.ToString() + " / " + _playerBoost.maxBoostFuel.ToString();
+            //BoostText.text = "Boost: " + _playerBoost.currentBoostFuel.ToString() + " / " + _playerBoost.maxBoostFuel.ToString();
             BoostText.text = "Boost: " + Mathf.Round(_playerBoost.currentBoostFuel).ToString() + " / " + Mathf.Round(_playerBoost.maxBoostFuel).ToString();
 
         }

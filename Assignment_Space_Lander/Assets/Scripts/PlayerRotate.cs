@@ -142,7 +142,7 @@ public class PlayerRotate : MonoBehaviour
         if (!isGrounded)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, GroundLayer);
-            if (hit.collider != null && hit.distance <= 0.9f)
+            if (hit.collider != null && hit.distance <= 1f)
             {
                 isGrounded = true;
                 rb2d.freezeRotation = true;
