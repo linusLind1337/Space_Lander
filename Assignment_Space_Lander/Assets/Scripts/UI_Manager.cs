@@ -26,13 +26,17 @@ public class UI_Manager : MonoBehaviour
 
     private void Start()
     {
-        TimerText.text = "Timer: " + Time.time.ToString();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         GUIUpdate();
+        float timeRound = Mathf.Round(Time.time * 10.0f) / 10.0f;
+        TimerText.text = "Timer: " + timeRound.ToString("F1");
+
+       // TimerText.text = "Timer: " + Mathf.Round(Time.time).ToString();
     }
 
     private void GUIUpdate()
