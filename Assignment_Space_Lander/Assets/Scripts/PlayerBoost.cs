@@ -38,6 +38,7 @@ public class PlayerBoost : MonoBehaviour
     
     public void Boosting()
     {
+        // if currentBoostFuel > 0 then we call _player functions to handle our boost, else currentBoostFuel < 0 then we cant boost
         if (currentBoostFuel > 0)
         {
             _player.UserInput();
@@ -55,6 +56,7 @@ public class PlayerBoost : MonoBehaviour
             _rigidbody.gravityScale = 1f;
         }
 
+        // if currentBoostFuel >= maxboostFuel then we cant get more
         if (currentBoostFuel >= maxBoostFuel)
         {
             currentBoostFuel = maxBoostFuel;
@@ -63,7 +65,7 @@ public class PlayerBoost : MonoBehaviour
     }
     #endregion
 
-    #region Collision detect
+    #region LandingPad detect
 
     private void OnCollisionEnter2D(Collision2D other)
     {

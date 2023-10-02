@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public float SpawnTimer;
+    [Header("Bullet Settings")]
+    public float shootDist = 10f;
+    public float shootInterval = 1.0f;
     public float bulletSpeed;
+    private float lastShotTimeCounter;
+    [Space]
 
-    private void Start()
-    {
-        StartCoroutine(BulletSpawn());
-    }
+    [Header("References")]
+    public Transform player;
+    public GameObject bulletPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    IEnumerator BulletSpawn()
-    {
-        while (true)
+    private void Update()
+    {   
+        if (Vector2.Distance(transform.position, player.position) < shootDist)
         {
-            GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb2d = newBullet.GetComponent<Rigidbody2D>();
-
-            if (rb2d != null)
+            // Check if enough time has passed since the last shot.
+            if (Time.time - lastShotTimeCounter >= shootInterval)
             {
-                rb2d.velocity = new Vector2(bulletSpeed, 0f);
+                Shoot();
+                lastShotTimeCounter = Time.time;
             }
-            yield return new WaitForSeconds(SpawnTimer);
         }
+    }
+
+    private void Shoot()
+    {
+        // Instantiate and shoot a bullet towards the player.
+        GameObject bullets = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Vector2 direction = (player.position - transform.position).normalized;
+        bullets.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
 }

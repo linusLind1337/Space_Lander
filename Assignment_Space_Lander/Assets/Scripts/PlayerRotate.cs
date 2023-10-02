@@ -27,22 +27,27 @@ public class PlayerRotate : MonoBehaviour
     public Transform playerObj;
     public ParticleSystem ps;
     private Camera mainCam;
+
     private Vector3 target;
     private Vector2 distance;
-    private Rigidbody2D rb2d;
     private Quaternion originalRot;
+
+    private Rigidbody2D rb2d;
     private PlayerBoost _Boost;
     
     // Start is called before the first frame update
     void Awake()
     {
         mainCam = Camera.main;
-        rb2d = GetComponent<Rigidbody2D>();
-        rb2d.gravityScale = 1f;
+        
         originalRot = transform.rotation;
+
+        rb2d = GetComponent<Rigidbody2D>();
         _Boost = FindFirstObjectByType<PlayerBoost>();
 
+        rb2d.gravityScale = 1f;
         Time.timeScale = 1f;
+
     }
 
     // Update is called once per frame
@@ -67,7 +72,7 @@ public class PlayerRotate : MonoBehaviour
             DisableBoost();
             ps.Stop();
         }
-
+        // if isPlayerBoosting call boosting(), which adds force to our target pos;
         if (isPlayerBoosting)
         {
             Boosting();
@@ -82,7 +87,7 @@ public class PlayerRotate : MonoBehaviour
     {
         if (playerObj != null)
         {
-            //Get players mousePos
+            //Get players mousePos to worldPoint
             target = mainCam.ScreenToWorldPoint(Input.mousePosition);
             Vector3 Dir = target - playerObj.transform.position;
             target.z = 0f;
@@ -102,13 +107,13 @@ public class PlayerRotate : MonoBehaviour
     
     #region PlayerBoost behavior
 
-    public void EnableBoost()
+    public void EnableBoost() 
     {
         isPlayerBoosting = true;
-        rb2d.gravityScale = 0f;
         isGrounded = false;
         boostEnabled = true;
         _Boost.canPlayerBoost = true;
+        rb2d.gravityScale = 0f;
 
     }
     public void DisableBoost()
@@ -125,13 +130,12 @@ public class PlayerRotate : MonoBehaviour
 
     public void Boosting()
     {
-
+        // A vector pointing from current pos to target pos;
         Vector3 Direction = (target - transform.position);
         rb2d.AddForce(Direction * boostSpeed);
         _Boost.canPlayerBoost = false;
 
     }
-
 
     #endregion
 
@@ -141,6 +145,7 @@ public class PlayerRotate : MonoBehaviour
     {
         if (!isGrounded)
         {
+            // creates a RaycastHit2D on playerPos, checks if hit & distance is <= 1f, then set player to Grounded and freezeRot
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, GroundLayer);
             if (hit.collider != null && hit.distance <= 1f)
             {
