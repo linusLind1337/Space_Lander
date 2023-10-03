@@ -75,6 +75,7 @@ public class PlayerRotate : MonoBehaviour
         // if isPlayerBoosting call boosting(), which adds force to our target pos;
         if (isPlayerBoosting)
         {
+            UpdatePos();
             Boosting();
         }
     }
@@ -94,19 +95,20 @@ public class PlayerRotate : MonoBehaviour
             float angles = MathF.Atan2(Dir.x, Dir.y) * Mathf.Rad2Deg;
             //Sets the max angle for player to rotate, can rot max -45/45
             angles = angles >= 45f ? 45 : (angles <= -45 ? -45f : angles);
-
-            //if player isnt grounded, apply rot and vector
-            if (!isGrounded)
+            //Applies rotation and vector.forward
+            transform.rotation = Quaternion.AngleAxis(-angles, Vector3.forward);
+            
+            /*if (!isGrounded)
             {
-                transform.rotation = Quaternion.AngleAxis(-angles, Vector3.forward);
-            }
+                
+            }*/
         }
     }
 
     #endregion
-    
-    #region PlayerBoost behavior
 
+    #region PlayerBoost behavior
+    
     public void EnableBoost() 
     {
         isPlayerBoosting = true;
@@ -115,6 +117,7 @@ public class PlayerRotate : MonoBehaviour
         _Boost.canPlayerBoost = true;
         rb2d.gravityScale = 0f;
 
+        
     }
     public void DisableBoost()
     {

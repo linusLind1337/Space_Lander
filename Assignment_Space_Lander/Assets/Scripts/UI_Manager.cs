@@ -15,6 +15,7 @@ public class UI_Manager : MonoBehaviour
     PlayerBoost _playerBoost;
     PlayerRotate _playerRotate;
     PlayerDetecter _playerDetecter;
+    Health _health;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,11 +23,13 @@ public class UI_Manager : MonoBehaviour
         _playerBoost = FindFirstObjectByType<PlayerBoost>();
         _playerRotate = FindFirstObjectByType<PlayerRotate>();
         _playerDetecter = FindFirstObjectByType<PlayerDetecter>();
+        _health = FindFirstObjectByType<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Update in UIManager is called.");
         GUIUpdate();       
     }
 
@@ -38,9 +41,24 @@ public class UI_Manager : MonoBehaviour
             float timeRound = Mathf.Round(Time.time * 10.0f) / 10.0f;
             TimerText.text = "Timer: " + timeRound.ToString("F1");
         }
+        isPlayerDead();
+    }
+
+    public void isPlayerDead()
+    {
         if (_playerDetecter.isPlayerDead)
         {
             gameOverObj.gameObject.SetActive(true);
+            
+            
+        }else if (_health.currentHealth <= 0)
+        {
+            _health.HealthManager();
+            Destroy(_health.gameObject);
+            gameOverObj.gameObject.SetActive(true);
+            Time.timeScale = 0f;
         }
+        
+
     }
 }
