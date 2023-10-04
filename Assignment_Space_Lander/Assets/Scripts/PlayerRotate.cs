@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
@@ -18,7 +19,9 @@ public class PlayerRotate : MonoBehaviour
     public bool isGrounded;
     private bool boostEnabled;
     [Space]
-
+    
+    public Transform psPos;
+    
     [Header("GroundLayer")]
     public LayerMask GroundLayer;
     [Space]
@@ -43,7 +46,7 @@ public class PlayerRotate : MonoBehaviour
         originalRot = transform.rotation;
 
         rb2d = GetComponent<Rigidbody2D>();
-        _Boost = FindFirstObjectByType<PlayerBoost>();
+        _Boost = FindFirstObjectByType<PlayerBoost>(); 
 
         rb2d.gravityScale = 1f;
         Time.timeScale = 1f;
@@ -66,17 +69,19 @@ public class PlayerRotate : MonoBehaviour
         {
             EnableBoost();
             psFire.Play();
+            
         }
         if (Input.GetMouseButtonUp(0))
         {
             DisableBoost();
-            psFire.Stop();
+           psFire.Stop();
         }
         // if isPlayerBoosting call boosting(), which adds force to our target pos;
         if (isPlayerBoosting)
         {
             UpdatePos();
             Boosting();
+            
         }
     }
 

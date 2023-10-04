@@ -39,7 +39,7 @@ public class PlayerBoost : MonoBehaviour
     public void Boosting()
     {
         // if currentBoostFuel > 0 then we call _player functions to handle our boost, else currentBoostFuel < 0 then we cant boost
-        if (currentBoostFuel > 0)
+        if ( currentBoostFuel> 0)
         {
             _player.UserInput();
             _player.UpdatePos();
