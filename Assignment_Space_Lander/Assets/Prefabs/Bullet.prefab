@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5490ac8308d0c9a46be2bd5e07fd65ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletDistance: 3

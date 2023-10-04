@@ -18,15 +18,6 @@ public class PlayerDetecter : MonoBehaviour
             isPlayerDead = true;
             StartCoroutine(KillPlayerOnColl());
         }
-
-     /*   hasPlayerCollided = true;
-        isPlayerDead = false;
-        if (hasPlayerCollided)
-        {
-            isPlayerDead = true;  
-            
-            
-        }*/
     }
 
     public IEnumerator KillPlayerOnColl()

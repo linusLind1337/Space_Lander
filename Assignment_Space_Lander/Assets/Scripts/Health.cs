@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
 
+    public TMP_Text healthText;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +25,13 @@ public class Health : MonoBehaviour
     public void HealthManager()
     {
         if (gameObject != null)
-        {
+        { 
             if (currentHealth == 0)
             {
+               // healthText.gameObject.SetActive(false);
                 Destroy(gameObject);
             }
+            healthText.text = "Health: " + currentHealth + " / " + maxHealth;
         }
         
     }

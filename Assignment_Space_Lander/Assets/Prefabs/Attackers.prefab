@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4029787087535430025}
-  - component: {fileID: 3514113409227274598}
+  - component: {fileID: -3226810212221093349}
   m_Layer: 0
   m_Name: Attackers
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3514113409227274598
+--- !u!114 &-3226810212221093349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,13 +73,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2273881274509250530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4d12ff01cd74a4287056e820b4d376, type: 3}
+  m_Script: {fileID: 11500000, guid: 1053748e445324a4387a2624370ba90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDist: 6
+  shootDist: 7
   shootInterval: 1
-  bulletSpeed: 5
-  player: {fileID: 0}
+  bulletSpeed: 7
+  player: {fileID: 2909323624707506079, guid: b5cd75b550a66bc4a90c5aee401dfe54, type: 3}
   bulletPrefab: {fileID: 2017214304657965328, guid: 54dcdbd2610d6654b8835a1809f00866, type: 3}
 --- !u!1 &8616618346936603813
 GameObject:

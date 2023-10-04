@@ -25,7 +25,7 @@ public class PlayerRotate : MonoBehaviour
 
     [Header("References")]
     public Transform playerObj;
-    public ParticleSystem ps;
+    public ParticleSystem psFire; 
     private Camera mainCam;
 
     private Vector3 target;
@@ -65,12 +65,12 @@ public class PlayerRotate : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !boostEnabled)
         {
             EnableBoost();
-            ps.Play();
+            psFire.Play();
         }
         if (Input.GetMouseButtonUp(0))
         {
             DisableBoost();
-            ps.Stop();
+            psFire.Stop();
         }
         // if isPlayerBoosting call boosting(), which adds force to our target pos;
         if (isPlayerBoosting)
@@ -125,7 +125,7 @@ public class PlayerRotate : MonoBehaviour
         boostEnabled = false;
         _Boost.canPlayerBoost = false;
         rb2d.gravityScale = 1f;
-
+        
         //Counter force on X axis to smooth it in;
         Vector2 slowForce = -rb2d.velocity * counterXForce;
         rb2d.AddForce(slowForce, ForceMode2D.Force);

@@ -16,6 +16,8 @@ public class PickUps : MonoBehaviour
         }
     }
 
+    //Add fucntion for sheild
+    
     IEnumerator ActiveShieldTimer()
     {
         isShieldActive = true;

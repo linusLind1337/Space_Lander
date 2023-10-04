@@ -29,7 +29,6 @@ public class UI_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update in UIManager is called.");
         GUIUpdate();       
     }
 
@@ -49,16 +48,16 @@ public class UI_Manager : MonoBehaviour
         if (_playerDetecter.isPlayerDead)
         {
             gameOverObj.gameObject.SetActive(true);
-            
-            
-        }else if (_health.currentHealth <= 0)
+        }
+        else if (_health.currentHealth <= 0)
         {
             _health.HealthManager();
+            _health.healthText.gameObject.SetActive(false);
             Destroy(_health.gameObject);
-            gameOverObj.gameObject.SetActive(true);
             Time.timeScale = 0f;
+            gameOverObj.gameObject.SetActive(true);
+            
         }
-        
-
     }
+    
 }
