@@ -27,7 +27,6 @@ public class PlayerRotate : MonoBehaviour
     [Header("References")]
     public Transform playerObj;
     public ParticleSystem psFire;
-    public ParticleSystem psSmoke;
     private Camera mainCam;
 
     private Vector3 target;
