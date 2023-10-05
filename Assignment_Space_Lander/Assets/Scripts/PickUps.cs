@@ -16,7 +16,7 @@ public class PickUps : MonoBehaviour
         }
     }
 
-    //Add fucntion for sheild
+    //Add function for shield
     
     IEnumerator ActiveShieldTimer()
     {

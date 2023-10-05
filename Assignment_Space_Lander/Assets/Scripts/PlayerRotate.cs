@@ -20,15 +20,14 @@ public class PlayerRotate : MonoBehaviour
     private bool boostEnabled;
     [Space]
     
-    public Transform psPos;
-    
     [Header("GroundLayer")]
     public LayerMask GroundLayer;
     [Space]
 
     [Header("References")]
     public Transform playerObj;
-    public ParticleSystem psFire; 
+    public ParticleSystem psFire;
+    public ParticleSystem psSmoke;
     private Camera mainCam;
 
     private Vector3 target;
@@ -74,7 +73,7 @@ public class PlayerRotate : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             DisableBoost();
-           psFire.Stop();
+            psFire.Stop();
         }
         // if isPlayerBoosting call boosting(), which adds force to our target pos;
         if (isPlayerBoosting)
