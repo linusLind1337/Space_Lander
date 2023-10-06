@@ -7,7 +7,8 @@ public class gameOver : MonoBehaviour
 {
     public void backToMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void Retry()

@@ -9,6 +9,7 @@ TagManager:
   - LandingPad
   - Shield_Pickup
   - Bullet
+  - Finisher
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class nextLevel : MonoBehaviour
 {
-    public  ParticleSystem ps;
+    public ParticleSystem ps;
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -15,10 +16,7 @@ public class nextLevel : MonoBehaviour
             ps = GameObject.Instantiate(ps, transform.position, quaternion.identity);
             ps.Play();
             StartCoroutine(WaitTimer());
-            Debug.Log("fdf"); 
         }
-
-        
     }
 
     IEnumerator WaitTimer()

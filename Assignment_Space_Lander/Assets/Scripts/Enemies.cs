@@ -15,6 +15,7 @@ public class Enemies : MonoBehaviour
     [Header("References")]
     public Transform player;
     public GameObject bulletPrefab;
+    public Transform bulletPoint;
    // public Rigidbody2D rb2d;
 
     private void Update()
@@ -33,7 +34,7 @@ public class Enemies : MonoBehaviour
     private void Shoot()
     {
         // Instantiate and shoot a bullet towards the player.
-        GameObject bullets = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullets = Instantiate(bulletPrefab, bulletPoint.transform.position, Quaternion.identity);
         Vector2 direction = (player.position - transform.position).normalized;
 
         bullets.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

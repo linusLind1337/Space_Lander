@@ -53,7 +53,7 @@ public class PlayerBoost : MonoBehaviour
         {
             _player.isPlayerBoosting = false;
             _rigidbody.gravityScale = 1f;
-            _player.psFire.Stop();
+            //_player.psFire.Stop();
         }
 
         // if currentBoostFuel >= maxboostFuel then we cant get more

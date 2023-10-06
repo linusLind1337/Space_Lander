@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
+using Input = UnityEngine.Input;
 
 public class UI_Manager : MonoBehaviour
 {
     [Header("Text UI")]
     public TMP_Text BoostText;
-    public TMP_Text TimerText;
+    public TMP_Text CurrentTimeText;
+    public TMP_Text BestTimeText;
+
     public GameObject gameOverObj;
+    public GameObject WinningObj;
+
+    private float timeElapsed;
+    private float bestTimer = float.MaxValue;
+
+    private string bestTimeSavePath = "BestTime.txt";
+
     [Space]
 
     //References
@@ -24,23 +36,46 @@ public class UI_Manager : MonoBehaviour
         _playerRotate = FindFirstObjectByType<PlayerRotate>();
         _playerDetecter = FindFirstObjectByType<PlayerDetecter>();
         _health = FindFirstObjectByType<Health>();
+
+        if (System.IO.File.Exists(bestTimeSavePath))
+        {
+            bestTimer = float.Parse(System.IO.File.ReadAllText(bestTimeSavePath));
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        GUIUpdate();       
+        GUIUpdate();
     }
+
 
     private void GUIUpdate()
     {
         if (BoostText != null)
         {
             BoostText.text = "Boost: " + Mathf.Round(_playerBoost.currentBoostFuel).ToString() + " / " + Mathf.Round(_playerBoost.maxBoostFuel).ToString();
-            float timeRound = Mathf.Round(Time.time * 10.0f) / 10.0f;
-            TimerText.text = "Timer: " + timeRound.ToString("F1");
+            Timer();
+            displayBestTime();
         }
+        
         isPlayerDead();
+    }
+
+    public void Timer()
+    {
+        if (timeElapsed < bestTimer)
+        {
+            System.IO.File.WriteAllText(bestTimeSavePath, bestTimer.ToString());
+        }
+    }
+
+    public void displayBestTime()
+    {
+        int bestMin = Mathf.FloorToInt(bestTimer / 60);
+        int bestSec = Mathf.FloorToInt(bestTimer % 60);
+        BestTimeText.text = string.Format("Best time: {0:00}:{1:00}", bestMin, bestSec);
     }
 
     public void isPlayerDead()
@@ -58,6 +93,15 @@ public class UI_Manager : MonoBehaviour
             gameOverObj.gameObject.SetActive(true);
             
         }
+    }
+
+ 
+    public bool onLastScene()
+    {
+        int pastScene = SceneManager.sceneCountInBuildSettings - 1;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+
+        return (pastScene == currentScene);
     }
     
 }
