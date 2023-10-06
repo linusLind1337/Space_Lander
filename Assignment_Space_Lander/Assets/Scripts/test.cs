@@ -5,56 +5,44 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    [Header("Text UI")]
-    public TMP_Text BoostText;
-    public TMP_Text CurrentTimeText;
-    public TMP_Text BestTimeText;
+    public TMP_Text highScore;
 
-    private float timeElapsed;
-    private float bestTimer = float.MaxValue;
+    public TMP_Text timeScore;
 
-    private string bestTimeSavePath = "bestTime.txt"; // The file path for saving best time
+    public bool timerActive = true;
 
-    // ... Other variables and references ...
+    public float timeTaken;
 
-    void Awake()
+    public float sceneBestTime = 60f;
+
+    private void Start()
     {
-        // Initialize bestTimer from the saved file, or use float.MaxValue as the default value.
-        if (System.IO.File.Exists(bestTimeSavePath))
+        highScore.text = PlayerPrefs.GetFloat("HighScore", 0).ToString();
+
+        sceneBestTime = PlayerPrefs.GetFloat("CurrentBestTime", sceneBestTime);
+    }
+
+    private void Update()
+    {
+        if (timerActive)
         {
-            bestTimer = float.Parse(System.IO.File.ReadAllText(bestTimeSavePath));
+            timeTaken += Time.deltaTime;
+
+            timeScore.text = timeTaken.ToString();
         }
     }
 
-    void Update()
+    public void StopTimer()
     {
-        GUIUpdate();
-    }
+        timerActive = false;
 
-    private void GUIUpdate()
-    {
-        // ... Update BoostText, Timer, and other UI elements ...
-        Timer();
-        displayBestTime();
-    }
-
-    public void Timer()
-    {
-        // ... Update timeElapsed ...
-
-        if (timeElapsed < bestTimer)
+        if (timeTaken < sceneBestTime)
         {
-            bestTimer = timeElapsed;
+            highScore.text = timeTaken.ToString();
 
-            // Save the best time to the file
-            System.IO.File.WriteAllText(bestTimeSavePath, bestTimer.ToString());
+            PlayerPrefs.SetFloat("CurrentBestTime", timeTaken);
+
+            PlayerPrefs.SetFloat("HighScore", timeTaken);
         }
-    }
-
-    public void displayBestTime()
-    {
-        int bestMin = Mathf.FloorToInt(bestTimer / 60);
-        int bestSec = Mathf.FloorToInt(bestTimer % 60);
-        BestTimeText.text = string.Format("Best time: {0:00}:{1:00}", bestMin, bestSec);
     }
 }
