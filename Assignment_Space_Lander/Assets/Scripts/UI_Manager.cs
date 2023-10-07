@@ -10,16 +10,9 @@ public class UI_Manager : MonoBehaviour
 {
     [Header("Text UI")]
     public TMP_Text BoostText;
-    public TMP_Text CurrentTimeText;
-    public TMP_Text BestTimeText;
 
     public GameObject gameOverObj;
     public GameObject WinningObj;
-
-    private float timeElapsed;
-    private float bestTimer = float.MaxValue;
-
-    private string bestTimeSavePath = "BestTime.txt";
 
     [Space]
 
@@ -36,12 +29,6 @@ public class UI_Manager : MonoBehaviour
         _playerRotate = FindFirstObjectByType<PlayerRotate>();
         _playerDetecter = FindFirstObjectByType<PlayerDetecter>();
         _health = FindFirstObjectByType<Health>();
-
-        if (System.IO.File.Exists(bestTimeSavePath))
-        {
-            bestTimer = float.Parse(System.IO.File.ReadAllText(bestTimeSavePath));
-
-        }
     }
 
     // Update is called once per frame
@@ -56,27 +43,11 @@ public class UI_Manager : MonoBehaviour
         if (BoostText != null)
         {
             BoostText.text = "Boost: " + Mathf.Round(_playerBoost.currentBoostFuel).ToString() + " / " + Mathf.Round(_playerBoost.maxBoostFuel).ToString();
-            Timer();
-            displayBestTime();
         }
-        
+
         isPlayerDead();
     }
 
-    public void Timer()
-    {
-        if (timeElapsed < bestTimer)
-        {
-            System.IO.File.WriteAllText(bestTimeSavePath, bestTimer.ToString());
-        }
-    }
-
-    public void displayBestTime()
-    {
-        int bestMin = Mathf.FloorToInt(bestTimer / 60);
-        int bestSec = Mathf.FloorToInt(bestTimer % 60);
-        BestTimeText.text = string.Format("Best time: {0:00}:{1:00}", bestMin, bestSec);
-    }
 
     public void isPlayerDead()
     {
@@ -91,11 +62,11 @@ public class UI_Manager : MonoBehaviour
             Destroy(_health.gameObject);
             Time.timeScale = 0f;
             gameOverObj.gameObject.SetActive(true);
-            
+
         }
     }
 
- 
+
     public bool onLastScene()
     {
         int pastScene = SceneManager.sceneCountInBuildSettings - 1;
@@ -103,5 +74,5 @@ public class UI_Manager : MonoBehaviour
 
         return (pastScene == currentScene);
     }
-    
+
 }

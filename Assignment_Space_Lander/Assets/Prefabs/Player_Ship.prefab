@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5360982673453740941}
   - component: {fileID: 1636786024685254134}
   - component: {fileID: 6935837461615490535}
-  - component: {fileID: 8279081298517803520}
+  - component: {fileID: 7891505686086729123}
   m_Layer: 0
   m_Name: Player_Ship
   m_TagString: Untagged
@@ -203,7 +203,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   healthText: {fileID: 0}
---- !u!114 &8279081298517803520
+--- !u!114 &7891505686086729123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cb4f4391cb6664bb594ce7ff03ac6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winningMenu: {fileID: 0}
 --- !u!1 &1582222227242622832
 GameObject:
   m_ObjectHideFlags: 0
