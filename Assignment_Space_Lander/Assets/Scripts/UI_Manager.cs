@@ -13,6 +13,9 @@ public class UI_Manager : MonoBehaviour
 
     public GameObject gameOverObj;
     public GameObject WinningObj;
+    public GameObject pauseObj;
+
+    private bool isGamePaused;
 
     [Space]
 
@@ -29,50 +32,59 @@ public class UI_Manager : MonoBehaviour
         _playerRotate = FindFirstObjectByType<PlayerRotate>();
         _playerDetecter = FindFirstObjectByType<PlayerDetecter>();
         _health = FindFirstObjectByType<Health>();
+
+        if (_playerBoost == null || _playerRotate == null || _playerDetecter == null || _health == null)
+        {
+            Debug.LogError("One or more required components are missing.");
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GUIUpdate();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePause();
+        }
+
+        GUIUpdate();   
     }
 
 
     private void GUIUpdate()
     {
+        isPlayerDead();
+
         if (BoostText != null)
         {
             BoostText.text = "Boost: " + Mathf.Round(_playerBoost.currentBoostFuel).ToString() + " / " + Mathf.Round(_playerBoost.maxBoostFuel).ToString();
-        }
-
-        isPlayerDead();
+        }  
     }
 
 
     public void isPlayerDead()
     {
-        if (_playerDetecter.isPlayerDead)
-        {
-            gameOverObj.gameObject.SetActive(true);
-        }
-        else if (_health.currentHealth <= 0)
-        {
-            _health.HealthManager();
-            _health.healthText.gameObject.SetActive(false);
-            Destroy(_health.gameObject);
-            Time.timeScale = 0f;
-            gameOverObj.gameObject.SetActive(true);
+         if (_playerDetecter.isPlayerDead)
+         {
+             gameOverObj.gameObject.SetActive(true);
+         }
+         else if (_health.currentHealth <= 0)
+         {
+             _health.HealthManager();
+             _health.healthText.gameObject.SetActive(false);
+             Destroy(_health.gameObject);
+             Time.timeScale = 0f;
+             gameOverObj.gameObject.SetActive(true);
 
-        }
+         }
     }
 
-
-    public bool onLastScene()
+    public void gamePause()
     {
-        int pastScene = SceneManager.sceneCountInBuildSettings - 1;
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-
-        return (pastScene == currentScene);
+        isGamePaused = !isGamePaused;
+        Time.timeScale = isGamePaused ? 0f : 1f;
+        pauseObj.gameObject.SetActive(isGamePaused);
     }
 
 }

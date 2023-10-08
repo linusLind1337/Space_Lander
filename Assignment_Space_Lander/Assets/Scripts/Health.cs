@@ -10,6 +10,10 @@ public class Health : MonoBehaviour
     public float maxHealth;
 
     public TMP_Text healthText;
+
+    public List<GameObject> activeShields = new List<GameObject>();
+
+    public bool isShieldActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +32,11 @@ public class Health : MonoBehaviour
         { 
             if (currentHealth == 0)
             {
-               // healthText.gameObject.SetActive(false);
-                Destroy(gameObject);
+                if (!isShieldActive)
+                {
+                    Destroy(gameObject);
+                }
+               
             }
             healthText.text = "Health: " + currentHealth + " / " + maxHealth;
         }
@@ -40,11 +47,36 @@ public class Health : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            float randDam = Random.Range(30, 40);
+            if (!isShieldActive)
+            {
+                float randDam = Random.Range(30, 40);
 
-            currentHealth -= randDam;
+                currentHealth -= randDam;
 
-            HealthManager();
+                HealthManager();
+            }
+            
+        }
+    }
+
+    public void ShieldActivate()
+    {
+        isShieldActive = true;
+        foreach (var shield in activeShields)
+        {
+            shield.SetActive(true);
+        }
+    }
+
+    public void ShieldDeActivate()
+    {
+        isShieldActive = false;
+        foreach (var shield in activeShields)
+        {
+            if (shield != null) // Check for null reference
+            {
+                shield.SetActive(false);
+            }
         }
     }
 }
