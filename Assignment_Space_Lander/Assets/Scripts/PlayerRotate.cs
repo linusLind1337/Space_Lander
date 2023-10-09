@@ -29,10 +29,12 @@ public class PlayerRotate : MonoBehaviour
     public ParticleSystem psFire;
     private Camera mainCam;
 
+    //Vector/Quaternions
     private Vector3 target;
     private Vector2 distance;
     private Quaternion originalRot;
 
+    //References
     private Rigidbody2D rb2d;
     private PlayerBoost _Boost;
     
@@ -59,8 +61,8 @@ public class PlayerRotate : MonoBehaviour
         UserInput();
     }
 
+    //Handle User Inputs
     #region User inputs
-
     public void UserInput()
     {
         if (Input.GetMouseButtonDown(0) && !boostEnabled)
@@ -74,7 +76,7 @@ public class PlayerRotate : MonoBehaviour
             DisableBoost();
             psFire.Stop();
         }
-        // if isPlayerBoosting call boosting(), which adds force to our target pos;
+        // if isPlayerBoosting call boosting(), Update pos
         if (isPlayerBoosting)
         {
             UpdatePos();
@@ -85,6 +87,7 @@ public class PlayerRotate : MonoBehaviour
 
     #endregion
     
+    //Updates player pos
     #region Player position update
 
     public void UpdatePos()
@@ -100,16 +103,12 @@ public class PlayerRotate : MonoBehaviour
             angles = angles >= 45f ? 45 : (angles <= -45 ? -45f : angles);
             //Applies rotation and vector.forward
             transform.rotation = Quaternion.AngleAxis(-angles, Vector3.forward);
-            
-            /*if (!isGrounded)
-            {
-                
-            }*/
         }
     }
 
     #endregion
 
+    //Boost behavior
     #region PlayerBoost behavior
     
     public void EnableBoost() 
@@ -118,9 +117,7 @@ public class PlayerRotate : MonoBehaviour
         isGrounded = false;
         boostEnabled = true;
         _Boost.canPlayerBoost = true;
-        rb2d.gravityScale = 0f;
-
-        
+        rb2d.gravityScale = 0f;       
     }
     public void DisableBoost()
     {
@@ -129,7 +126,7 @@ public class PlayerRotate : MonoBehaviour
         _Boost.canPlayerBoost = false;
         rb2d.gravityScale = 1f;
         
-        //Counter force on X axis to smooth it in;
+        //Counter force on X axis to smooth it in so player doesnt glide away in air
         Vector2 slowForce = -rb2d.velocity * counterXForce;
         rb2d.AddForce(slowForce, ForceMode2D.Force);
     }
@@ -145,6 +142,7 @@ public class PlayerRotate : MonoBehaviour
 
     #endregion
 
+    //Ground Checker
     #region Ground Checker
 
     public void Grounded()

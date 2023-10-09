@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
+    [Header("Scene Number")]
     public int sceneNumber;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    //StartScene Function
+    #region startScene
     public void StartScene()
     {
         Debug.Log("loading scene");
         SceneManager.LoadScene("Level" + sceneNumber.ToString());
     }
+    #endregion
+
 }

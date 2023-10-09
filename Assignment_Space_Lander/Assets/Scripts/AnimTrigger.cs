@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimTrigger : MonoBehaviour
 {
+    [Header("Animator")]
     public Animator animator;
 
     // Start is called before the first frame update
@@ -11,6 +12,9 @@ public class AnimTrigger : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
+    //OnTriggerEnter2D Function
+    #region TriggerEnter2D
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -18,7 +22,10 @@ public class AnimTrigger : MonoBehaviour
             animator.SetBool("isPlayerInside", true);
         }
     }
+    #endregion
 
+    //OnTriggerExit2D Function
+    #region TriggerExit2D
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -26,4 +33,6 @@ public class AnimTrigger : MonoBehaviour
             animator.SetBool("isPlayerInside", false);
         }
     }
+    #endregion
+
 }

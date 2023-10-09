@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class nextLevel : MonoBehaviour
 {
+    [Header("Boost Particles")]
     public ParticleSystem ps;
 
     private bool isLevelComplete;
 
+    //OnCollisionEnter2D Fuction
+    #region CollisionEnter2D
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player") && !isLevelComplete)
@@ -21,10 +24,14 @@ public class nextLevel : MonoBehaviour
             StartCoroutine(WaitTimer());
         }
     }
+    #endregion
 
+    //IEnumerator
+    #region IEnumerator WaitTimer
     IEnumerator WaitTimer()
     {
         yield return new WaitForSeconds(1f);
-       //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    #endregion
+
 }

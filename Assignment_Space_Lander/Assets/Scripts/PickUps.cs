@@ -5,50 +5,35 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    /*public GameObject activateShield;
-    private bool isShieldActive;
-    
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            StartCoroutine(ActiveShieldTimer());
-        }
-    }
-
-    //Add function for shield
-    
-    IEnumerator ActiveShieldTimer()
-    {
-        isShieldActive = true;
-        activateShield.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        isShieldActive = false;
-        activateShield.gameObject.SetActive(false);
-
-    }*/
-
-    public Health playerHealth; // Reference to the player's Health script
+    [Header("References")]
+    public Health playerHealth;
     public GameObject activateShield;
 
+    //OnTriggerEnter Function
+    #region Trigger2D
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
-            // Activate the shield in the player's Health script
+        {            
             StartCoroutine(ActiveShieldTimer());
-            playerHealth.ShieldActivate();
-           
+            playerHealth.ShieldActivate();//Activates shield from playerHealth
+
         }
     }
+    #endregion
 
+    //Shield IEnumerator
+    #region Shield IEnum
     IEnumerator ActiveShieldTimer()
     {
+        //Activates shield for 3 sec then deActivetes shield from gameObject and playerHealth
         activateShield.gameObject.SetActive(true);
         yield return new WaitForSeconds(3f);
         playerHealth.ShieldDeActivate();
         playerHealth.isShieldActive = false;
         activateShield.gameObject.SetActive(false);
     }
+    #endregion
+
 
 }

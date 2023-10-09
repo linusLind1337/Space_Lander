@@ -30,15 +30,15 @@ public class PlayerBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Change for later, dont want boosting in !!update!!
         Boosting();
     }
 
+    //Fuel Function
     #region Tracking the fuel
     
     public void Boosting()
     {
-        // if currentBoostFuel > 0 then we call _player functions to handle our boost, else currentBoostFuel < 0 then we cant boost
+        // if currentBoostFuel > 0 then we call _player functions to handle our boost, else we cant boost
         if ( currentBoostFuel> 0)
         {
             _player.UserInput();
@@ -56,7 +56,7 @@ public class PlayerBoost : MonoBehaviour
             //_player.psFire.Stop();
         }
 
-        // if currentBoostFuel >= maxboostFuel then we cant get more
+        // if currentBoostFuel >= maxboostFuel then we cant get more fuel
         if (currentBoostFuel >= maxBoostFuel)
         {
             currentBoostFuel = maxBoostFuel;
@@ -65,6 +65,7 @@ public class PlayerBoost : MonoBehaviour
     }
     #endregion
 
+    //Detector Function
     #region LandingPad detect
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -72,8 +73,8 @@ public class PlayerBoost : MonoBehaviour
         if (other.gameObject.CompareTag("LandingPad"))
         {
             currentBoostFuel  = maxBoostFuel;
+            
         }
-        
     }
 
     #endregion

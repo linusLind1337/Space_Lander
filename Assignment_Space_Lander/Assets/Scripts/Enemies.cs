@@ -16,21 +16,23 @@ public class Enemies : MonoBehaviour
     public Transform player;
     public GameObject bulletPrefab;
     public Transform bulletPoint;
-   // public Rigidbody2D rb2d;
 
     private void Update()
-    {   
+    {   //check if player is != null and distance is within shootDist
         if (player != null && Vector2.Distance(transform.position, player.position) < shootDist)
-        {
-            
+        {  //Check if enough time has passed
             if (Time.time - lastShotTimeCounter >= shootInterval)
             {
+               //call Shoot()
                 Shoot();
+                //Update out last shot to our current timer(time.time)
                 lastShotTimeCounter = Time.time;
             }
         }
     }
 
+    //Shoot Function
+    #region Shoot
     private void Shoot()
     {
         // Instantiate and shoot a bullet towards the player.
@@ -38,6 +40,8 @@ public class Enemies : MonoBehaviour
         Vector2 direction = (player.position - transform.position).normalized;
 
         bullets.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-        
+
     }
+    #endregion
+
 }

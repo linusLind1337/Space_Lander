@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class gameOver : MonoBehaviour
 {
+    //BackToMenu Function
+    #region BackToMenu
     public void backToMenu()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneManager.LoadSceneAsync(0);
     }
+    #endregion
 
+    //Retry Function
+    #region Retry
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+    #endregion
+
 }
