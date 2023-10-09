@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6342906654224241564}
   - component: {fileID: 557175021515032327}
   - component: {fileID: 6153841632379607044}
+  - component: {fileID: 3788159330946067340}
   m_Layer: 0
   m_Name: Shield_Pickup
   m_TagString: Shield_Pickup
@@ -131,6 +132,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7777778, y: 1.7777778}
   m_EdgeRadius: 0
+--- !u!114 &3788159330946067340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090515603046239618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9077d750e2d4a3439965e8d7240a83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  activateShield: {fileID: 0}
 --- !u!1 &8545512499934096360
 GameObject:
   m_ObjectHideFlags: 0

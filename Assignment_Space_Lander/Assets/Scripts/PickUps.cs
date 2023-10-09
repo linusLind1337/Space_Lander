@@ -37,11 +37,8 @@ public class PickUps : MonoBehaviour
         {
             // Activate the shield in the player's Health script
             StartCoroutine(ActiveShieldTimer());
-
-            //playerHealth.ShieldActivate();
-            
-            // Deactivate the pickup object or set a timer to do so
-            StartCoroutine(DeactivatePickup());
+            playerHealth.ShieldActivate();
+           
         }
     }
 
@@ -49,14 +46,9 @@ public class PickUps : MonoBehaviour
     {
         activateShield.gameObject.SetActive(true);
         yield return new WaitForSeconds(3f);
-        StartCoroutine(ActiveShieldTimer());
+        playerHealth.ShieldDeActivate();
+        playerHealth.isShieldActive = false;
         activateShield.gameObject.SetActive(false);
     }
 
-    IEnumerator DeactivatePickup()
-    {
-        // Deactivate the pickup object after a delay or other conditions
-        yield return new WaitForSeconds(1.1f);
-        gameObject.SetActive(false);
-    }
 }
