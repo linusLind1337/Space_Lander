@@ -2,6 +2,8 @@ Assignment_SpaceLander 2D
 
 - [Introcution](#Intro)
 - [Reasons](#Why-This-Game)
+- [Issues](#Development-Issues)
+- [Future Plans](#Plans-for-the-game)
 
 # Intro
 So I chose to make a Space 2D game, where my idea is that you are a spacecraft. Your main goal is to get from start to finish and try to evade those dangerous enemies either by dodging or by using the shields that are scattered all over the map, there are also a bunch of landing pads that give you a full boost, now keep in mind the game is supposed to be hard so you won't know where then next landing pad is until you find it.....and no there aren't any checkpoints.....GOOD LUCK.
@@ -18,7 +20,7 @@ So the reason I chose this game is that I find these types of games fun to play,
 
 now I must say it was a bit more challenging than I thought it was going to be, though I've never really made this type of game before
 
-# issues that occurred during the development
+# Development Issues
 So during the making of the game, I stumbled across multiple issues, the issues could be all from the computer not working properly, unity being unity, and coding issues, now these are just a few of the issues, we get more detailed later.
 
 The main issue I had was that my home computer wasn't working as it was supposed to, I spent multiple hours trying to make it work and that took away valuable time from me, time that I could have spent more on the game.
