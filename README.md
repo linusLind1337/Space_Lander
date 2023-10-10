@@ -70,4 +70,4 @@ So I had quite some ideas I wanted to add to my game, but due to the issues and 
 
   *Now keep in mind I can't remember all the websites but there are a few more, that I've just used to research more on how to do etc, or if any other people had the same problem like me.*
 
-
+ I RATE THIS GAME 7/10......8/10 IF I DIDNT HAVE SO MANY ISSUES :(
