@@ -1,6 +1,7 @@
 Assignment_SpaceLander 2D
 
 - [Introcution](#Intro)
+- [Reasons](#Why-This-Game)
 
 # Intro
 So I chose to make a Space 2D game, where my idea is that you are a spacecraft. Your main goal is to get from start to finish and try to evade those dangerous enemies either by dodging or by using the shields that are scattered all over the map, there are also a bunch of landing pads that give you a full boost, now keep in mind the game is supposed to be hard so you won't know where then next landing pad is until you find it.....and no there aren't any checkpoints.....GOOD LUCK.
@@ -11,7 +12,7 @@ The game has 3 levels of difficulties:
 * Level 3 is hard close to impossible
 
 
-# Why I chose this Game
+# Why This Game
 
 So the reason I chose this game is that I find these types of games fun to play, and challenging, and because the teacher loves his "space shooter" type of games. I am quite happy that I chose this game because I've learned quite a bit even tho I've been programming for a while, but still ain't the best, but hey that's the reason I joined FG, to learn and have fun, and that's what I am doing. 
 
