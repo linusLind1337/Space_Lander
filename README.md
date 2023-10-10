@@ -4,6 +4,7 @@ Assignment_SpaceLander 2D
 - [Reasons](#Why-This-Game)
 - [Issues](#Development-Issues)
 - [Future Plans](#Plans-for-the-game)
+- [Credits](#Credits/links/Websites)
 
 # Intro
 So I chose to make a Space 2D game, where my idea is that you are a spacecraft. Your main goal is to get from start to finish and try to evade those dangerous enemies either by dodging or by using the shields that are scattered all over the map, there are also a bunch of landing pads that give you a full boost, now keep in mind the game is supposed to be hard so you won't know where then next landing pad is until you find it.....and no there aren't any checkpoints.....GOOD LUCK.
@@ -55,7 +56,7 @@ So how I got my PlayerPrefs to work was that I found a "tutorial" or guide on ho
 
 So I had quite some ideas I wanted to add to my game, but due to the issues and time it took to fix them I didn't have enough time to work on assets, design, etc to make the game feel more "alive", tho I will still work on this game because it's a good game to have and to look back and reflect/learn from. 
 
-# Credits/links/Websites that helped me with this project
+# Credits/links/Websites
 
 * https://docs.unity3d.com/ScriptReference/ is the main site I've used during this project.
 * https://gamedevbeginner.com/how-to-use-player-prefs-in-unity/ how I learned/understood how to use PlayerPrefs better.
