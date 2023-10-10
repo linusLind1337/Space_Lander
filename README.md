@@ -1,11 +1,8 @@
 Assignment_SpaceLander 2D
 
-# Table of Contents
-
-- [Introduction](#Intro)
+- [Titles](#titles)
 
 
-<a name="Intro"></a>
 
 # Intro
 So I chose to make a Space 2D game, where my idea is that you are a spacecraft. Your main goal is to get from start to finish and try to evade those dangerous enemies either by dodging or by using the shields that are scattered all over the map, there are also a bunch of landing pads that give you a full boost, now keep in mind the game is supposed to be hard so you won't know where then next landing pad is until you find it.....and no there aren't any checkpoints.....GOOD LUCK.
@@ -14,23 +11,6 @@ The game has 3 levels of difficulties:
 * Level 1 is easy,
 * Level 2 is medium
 * Level 3 is hard close to impossible
-
-This is the introduction to my project.
-
-<a name="section1"></a>
-
-## Section 1
-
-This is the content of Section 1.
-
-<a name="section2"></a>
-
-## Section 2
-
-This is the content of Section 2.
-
-
-
 
 # Why I chose this Game
 
@@ -82,3 +62,4 @@ So I had quite some ideas I wanted to add to my game, but due to the issues and 
 
   Now keep in mind I can't remember all the websites but there are a few more, that I've just used to research more on how to do etc, or if any other people had the same problem like me.
 
+# Titles 
