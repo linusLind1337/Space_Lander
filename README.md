@@ -68,6 +68,8 @@ So I had quite some ideas I wanted to add to my game, but due to the issues and 
 * My older brother that helped me with a few things, on how it should be handled, some code parts, and other small things.
 * https://www.youtube.com/@Brackeys The man the myth the legend BRACKEYS, used him more to refresh some parts that I've forgotten how to do.
 
-  *Now keep in mind I can't remember all the websites but there are a few more, that I've just used to research more on how to do etc, or if any other people had the same problem like me.*
+  *Now keep in mind I can't remember all the websites but there are a few more, that I've just used to research more on how to do etc, or if any other people had the same problem as me.*
+
+  One thing to note is my script names, the reason some don't have the "correct" name is that I had to redo some scripts and idk why but I didn't think of just making a new one and I hate renaming scripts due to issues. For example, my player controller is called playerRotate because I first was going to handle rotations in one script and boost in one but then I changed it etc. BUT they work and I will do better in the future :)
 
  I RATE THIS GAME 7/10......8/10 IF I DIDNT HAVE SO MANY ISSUES :(
