@@ -4,7 +4,7 @@ Assignment_SpaceLander 2D
 - [Reasons](#Why-This-Game)
 - [Issues](#Development-Issues)
 - [Future Plans](#Plans-for-the-game)
-- [Credits](#Credits/links/Websites)
+- [Credits](#Credits-links-Websites)
 
 # Intro
 So I chose to make a Space 2D game, where my idea is that you are a spacecraft. Your main goal is to get from start to finish and try to evade those dangerous enemies either by dodging or by using the shields that are scattered all over the map, there are also a bunch of landing pads that give you a full boost, now keep in mind the game is supposed to be hard so you won't know where then next landing pad is until you find it.....and no there aren't any checkpoints.....GOOD LUCK.
