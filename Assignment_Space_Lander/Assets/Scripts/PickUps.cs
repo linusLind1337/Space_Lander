@@ -6,19 +6,16 @@ using UnityEngine;
 public class PickUps : MonoBehaviour
 {
     PlayerBoost _boost;
-    // List of pickup objects
-    public List<GameObject> pickupObjects;
-    // Reference to the player's boost handler script
+    public List<GameObject> pickupObj;
     public PlayerBoost playerBoost;
 
     private void Start()
     {
         _boost = FindFirstObjectByType<PlayerBoost>();
-
-        // Populate the list of pickup objects at the start
-        foreach (Transform child in transform)
+   
+        foreach (Transform obj in transform)
         {
-            pickupObjects.Add(child.gameObject);
+            pickupObj.Add(obj.gameObject);
         }
     }
 
@@ -26,15 +23,12 @@ public class PickUps : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (pickupObjects.Count > 0)
+            if (pickupObj.Count > 0)
             {
-                // Activate the next pickup in the list
-                GameObject nextPickup = pickupObjects[0];
+                GameObject nextPickup = pickupObj[0];
                 playerBoost.ActivateInfiniteBoost();
-
-                // Destroy the pickup object
                 Destroy(nextPickup);
-                pickupObjects.RemoveAt(0);
+                pickupObj.RemoveAt(0);
             }
         }
     }

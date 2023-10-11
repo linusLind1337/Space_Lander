@@ -15,9 +15,6 @@ public class Health : MonoBehaviour
     public TMP_Text healthText;
     [Space]
 
-    //[Header("ActiveShields List")]
-   // public List<GameObject> activeShields = new List<GameObject>();
-
     [Space]
     [Header("Shield checker")]
     public bool isShieldActive = false;
@@ -73,45 +70,5 @@ public class Health : MonoBehaviour
         }
     }
     #endregion
-
-    //ShieldActivate Function
-   /* #region ShieldActivate
-    public void ShieldActivate()
-    { // Sets isShieldActive to true, then iterates through the list of shield objects in activeShields, activates each shieldObj
-        //isShieldActive = true;
-        foreach (var shield in activeShields)
-        {
-            shield.SetActive(true);
-        }
-    }
-    #endregion
-
-    //ShieldDeActive Function
-    #region ShieldDeActivate
-    public void ShieldDeActivate()
-    {
-        // function set isShieldActive to false and then deActivates a shield object in our list
-        isShieldActive = false;
-        foreach (var shield in activeShields)
-        {
-            //We check for shields null reference
-            if (shield != null)
-            {
-                shield.SetActive(false); 
-            }
-            
-        }
-
-       /* for (int i = 0; i < activeShields.Count; i++)
-        {
-            if (activeShields[i])
-            {
-                 Destroy(activeShields[i]);
-               // activeShields[i].SetActive(false);
-                break;
-            }
-        }
-    }
-    #endregion*/
 
 }

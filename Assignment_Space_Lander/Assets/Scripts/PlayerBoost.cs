@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class PlayerBoost : MonoBehaviour
 {
-   
+  
     [Header("Fuel settings")]
     public float currentBoostFuel;
     public float maxBoostFuel;
     [SerializeField] private float usingFuelAmount;
-    private float infiniteBoostTimer = 0.0f; // Infinite boost timer
-    private float infiniteBoostDuration = 3.0f; // infinite boost durations
+    private float infiBoostTimer = 0.0f;
+    private float infiBoostDuration = 3.0f;
     [Space]
 
     [Header("Booleans")]
     public bool canPlayerBoost;
-    public bool isInfiniteBoostActive = false;
+    public bool isInfiniteActive = false;
 
     //References
     private PlayerRotate _player;
@@ -39,29 +39,28 @@ public class PlayerBoost : MonoBehaviour
     //Fuel Function
     #region Tracking the fuel
 
+    //Sets boost timer to boost duration if true
     public void ActivateInfiniteBoost()
     {
-        //Sets boost timer to boost duration if true
-        isInfiniteBoostActive = true;
-        infiniteBoostTimer = infiniteBoostDuration;
+        isInfiniteActive = true;
+        infiBoostTimer = infiBoostDuration;
     }
 
     public void Boosting()
     {
-        if (isInfiniteBoostActive)
+        //our infinite bost
+        if (isInfiniteActive)
         {
-            if (infiniteBoostTimer > 0)
-            {
-                // Handles our infinite boost
+            if (infiBoostTimer > 0)
+            {  
                 _player.UserInput();
                 _player.UpdatePos();
                 _player.Boosting();
-                infiniteBoostTimer -= Time.deltaTime;
+                infiBoostTimer -= Time.deltaTime;
             }
             else
             {
-                // if Infinite boost over, deActivate it
-                isInfiniteBoostActive = false;
+                isInfiniteActive = false;
             }
         }
         else if (currentBoostFuel > 0)
@@ -69,6 +68,7 @@ public class PlayerBoost : MonoBehaviour
             // our normal boost
             _player.UserInput();
             _player.UpdatePos();
+
             if (_player.isPlayerBoosting)
             {
                 _player.Boosting();
