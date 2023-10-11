@@ -1584,8 +1584,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (1)
+      value: Boost_PickUp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -3854,8 +3858,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (3)
+      value: Boost_PickUp (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -4926,8 +4934,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (5)
+      value: Boost_PickUp (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -7782,8 +7794,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (2)
+      value: Boost_PickUp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -8417,8 +8433,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (4)
+      value: Boost_PickUp (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -8496,8 +8516,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (6)
+      value: Boost_PickUp (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
@@ -9735,6 +9759,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4782cc93ed256364599b9aaf424da27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2062118206 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5360982673453740941, guid: b5cd75b550a66bc4a90c5aee401dfe54, type: 3}
+  m_PrefabInstance: {fileID: 2522097488879786606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062118203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd04710b6c1db7d4ca6f94b621c14461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2071042611
@@ -11129,8 +11164,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup
+      value: Boost_PickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118206}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 

@@ -247,7 +247,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (3)
+      value: Boost_PickUp (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: pickUpObj
@@ -456,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (1)
+      value: Boost_PickUp (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: pickUpObj
@@ -1492,7 +1492,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup (2)
+      value: Boost_PickUp (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: pickUpObj
@@ -11462,7 +11462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2090515603046239618, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Name
-      value: Shield_Pickup
+      value: Boost_PickUp
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_Enabled
