@@ -17,6 +17,21 @@ The game has 3 levels of difficulties:
 * **Level 3 is hard close to impossible**
 
 
+How to play the game?
+
+Well when you download the project you will see 5 scenes:
+* **Level1**
+* **Level2**
+* **Level3**
+* **Main Menu**
+* **Level Selector**
+
+Controls?
+
+You need to start the game in Main Menu and you can then go from there: *Start* will bring to to level 1, *Level selector* will bring you to the scene to choose the level you want, then we have also have *Quit*.
+
+Controls for the game are very simple you simple you use your *mouse*, the left click will make you *boost*, you move the pointer where you want the space ship to boost towards, very simple controls
+
 # *Why This Game*
 
 So the reason I chose this game is that I find these types of games fun to play, and challenging, and because the teacher loves his "space shooter" type of games. I am quite happy that I chose this game because I've learned quite a bit even tho I've been programming for a while, but still ain't the best, but hey that's the reason I joined FG, to learn and have fun, and that's what I am doing. 
