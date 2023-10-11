@@ -250,13 +250,33 @@ PrefabInstance:
       value: Shield_Pickup (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickUpObj
+      value: 
+      objectReference: {fileID: 150730442}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: shieldNum
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118208}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObject
+      value: 
+      objectReference: {fileID: 150730442}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupShield
+      value: 
+      objectReference: {fileID: 150730442}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 2062118205}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerShield
+      value: 
+      objectReference: {fileID: 1346483033}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: activateShield
       value: 
@@ -439,13 +459,33 @@ PrefabInstance:
       value: Shield_Pickup (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickUpObj
+      value: 
+      objectReference: {fileID: 1716230493}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: shieldNum
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118208}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObject
+      value: 
+      objectReference: {fileID: 1716230493}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupShield
+      value: 
+      objectReference: {fileID: 1716230493}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 2062118205}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerShield
+      value: 
+      objectReference: {fileID: 1346483033}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: activateShield
       value: 
@@ -1455,13 +1495,33 @@ PrefabInstance:
       value: Shield_Pickup (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickUpObj
+      value: 
+      objectReference: {fileID: 439067221}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: shieldNum
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118208}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObject
+      value: 
+      objectReference: {fileID: 439067221}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupShield
+      value: 
+      objectReference: {fileID: 439067221}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 2062118205}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerShield
+      value: 
+      objectReference: {fileID: 1346483033}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: activateShield
       value: 
@@ -1834,6 +1894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865573060}
+  - component: {fileID: 1865573061}
   m_Layer: 0
   m_Name: Pickups
   m_TagString: Untagged
@@ -1860,6 +1921,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865573061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865573059}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9077d750e2d4a3439965e8d7240a83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupObjects: []
+  playerBoost: {fileID: 0}
 --- !u!1 &1994857752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2219,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4782cc93ed256364599b9aaf424da27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2062118208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5360982673453740941, guid: b5cd75b550a66bc4a90c5aee401dfe54, type: 3}
+  m_PrefabInstance: {fileID: 2522097488879786606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062118203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd04710b6c1db7d4ca6f94b621c14461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2087379497
@@ -11379,17 +11465,73 @@ PrefabInstance:
       value: Shield_Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickUpObj
+      value: 
+      objectReference: {fileID: 91345702}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: shieldNum
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerBoost
+      value: 
+      objectReference: {fileID: 2062118208}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: shieldValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObject
+      value: 
+      objectReference: {fileID: 91345702}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupShield
+      value: 
+      objectReference: {fileID: 91345702}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 2062118205}
     - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: playerShield
+      value: 
+      objectReference: {fileID: 1346483033}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: activateShield
       value: 
       objectReference: {fileID: 1346483033}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 91345702}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: pickupObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1716230493}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: shieldPickupObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: shieldPickupObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 91345702}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: shieldPickupObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1716230493}
+    - target: {fileID: 3788159330946067340, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
+      propertyPath: shieldPickupObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 439067221}
     - target: {fileID: 6342906654224241564, guid: 8d5bd7659c947e64bbb53720d0feaba3, type: 3}
       propertyPath: m_RootOrder
       value: -1

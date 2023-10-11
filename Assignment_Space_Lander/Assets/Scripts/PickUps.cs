@@ -5,35 +5,37 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    [Header("References")]
-    public Health playerHealth;
-    public GameObject activateShield;
-    
-    //OnTriggerEnter Function
-    #region Trigger2D
-    public void OnTriggerEnter2D(Collider2D other)
+    PlayerBoost _boost;
+    // List of pickup objects
+    public List<GameObject> pickupObjects;
+    // Reference to the player's boost handler script
+    public PlayerBoost playerBoost;
+
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {            
-            StartCoroutine(ActiveShieldTimer());
-            playerHealth.ShieldActivate();//Activates shield from playerHealth
-            
+        _boost = FindFirstObjectByType<PlayerBoost>();
+
+        // Populate the list of pickup objects at the start
+        foreach (Transform child in transform)
+        {
+            pickupObjects.Add(child.gameObject);
         }
     }
-    #endregion
 
-
-    //Shield IEnumerator
-    #region Shield IEnum
-    IEnumerator ActiveShieldTimer()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Activates shield for 3 sec then deActivetes shield from gameObject and playerHealth
-        activateShield.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        playerHealth.ShieldDeActivate();
-        playerHealth.isShieldActive = false;
-        activateShield.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (pickupObjects.Count > 0)
+            {
+                // Activate the next pickup in the list
+                GameObject nextPickup = pickupObjects[0];
+                playerBoost.ActivateInfiniteBoost();
 
+                // Destroy the pickup object
+                Destroy(nextPickup);
+                pickupObjects.RemoveAt(0);
+            }
+        }
     }
-    #endregion
 }
