@@ -8,7 +8,7 @@ public class PickUps : MonoBehaviour
     [Header("References")]
     public Health playerHealth;
     public GameObject activateShield;
-
+    
     //OnTriggerEnter Function
     #region Trigger2D
     public void OnTriggerEnter2D(Collider2D other)
@@ -17,10 +17,11 @@ public class PickUps : MonoBehaviour
         {            
             StartCoroutine(ActiveShieldTimer());
             playerHealth.ShieldActivate();//Activates shield from playerHealth
-
+            
         }
     }
     #endregion
+
 
     //Shield IEnumerator
     #region Shield IEnum
@@ -32,8 +33,7 @@ public class PickUps : MonoBehaviour
         playerHealth.ShieldDeActivate();
         playerHealth.isShieldActive = false;
         activateShield.gameObject.SetActive(false);
+
     }
     #endregion
-
-
 }

@@ -92,12 +92,23 @@ public class Health : MonoBehaviour
     {
         // function set isShieldActive to false and then deActivates a shield object in our list
         isShieldActive = false;
-        foreach (var shield in activeShields)
+       /* foreach (var shield in activeShields)
         {
             //We check for shields null reference
             if (shield != null)
             {
-                shield.SetActive(false);
+                Debug.Log("Deactivating: " + activeShields.Count);
+                shield.SetActive(false); 
+            }
+        }*/
+
+        for (int i = 0; i < activeShields.Count; i++)
+        {
+            if (activeShields[i])
+            {
+                 Destroy(activeShields[i]);
+               // activeShields[i].SetActive(false);
+                break;
             }
         }
     }
